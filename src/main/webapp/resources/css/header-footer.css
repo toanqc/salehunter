@@ -1,0 +1,339 @@
+/* Header */
+#header-menu-bg {
+	height: 39px;
+	width: 100%;
+	background: #332f2e;
+}
+
+#header_menu {
+	height: 39px;
+	margin-top: -39px;
+	width: 980px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#header_menu a {
+	color: #9e9999;
+	padding: 12px 24px 0px 0px;
+	display: inline-block;
+	text-decoration: none;
+}
+
+#header_menu a:hover {
+	text-decoration: underline;
+}
+
+#currency {
+	float: right;
+	line-height: 17px;
+	margin-top: 5px;
+	margin-right: 0px;
+}
+
+#currency a {
+	background: #746E6E;
+	display: inline-block;
+	padding: 6px 7px;
+	color: #fff;
+	text-decoration: none;
+	margin-left: 2px;
+}
+
+#currency a:hover {
+	background: #F15A3B;
+	text-decoration: none;
+}
+
+#currency .active {
+	background: #F15A3B;
+}
+
+#currency .active:hover {
+	background: #F15A3B;
+}
+
+#header {
+	height: 94px;
+	margin-bottom: 7px;
+	padding-bottom: 4px;
+	position: relative;
+	z-index: 99;
+}
+
+#header #logo {
+	position: absolute;
+	top: 35px;
+	left: 0px;
+}
+
+#header #phone {
+	position: absolute;
+	top: 30px;
+	left: 220px;
+}
+
+#header #phone b {
+	color: #f15a3b;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+#header #phone span {
+	color: #393232;
+}
+
+#language {
+	position: absolute;
+	top: 78px;
+	right: 0px;
+	line-height: 17px;
+}
+
+#language img {
+	cursor: pointer;
+	margin-right: 5px;
+}
+
+#header #cart {
+	position: absolute;
+	top: 37px;
+	right: 0px;
+	z-index: 9;
+	clear: both;
+}
+
+#header #cart .icon {
+	background: #f15a3b;
+	width: 45px;
+	height: 31px;
+	margin-right: 1px;
+	float: left;
+	z-index: 2;
+	cursor: pointer;
+	color: white;
+}
+
+#header #cart .valign-center {
+	padding-top: 3px;
+}
+
+#header #cart .icon:hover {
+	background-color: #B6A7A4;
+}
+
+#header #cart .heading {
+	float: left;
+	padding-top: 7px;
+	padding-left: 14px;
+	padding-right: 14px;
+	background: #B6A7A4;
+	position: relative;
+	z-index: 1;
+	height: 31px;
+}
+
+#header #cart .heading a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#header #cart .heading a:hover {
+	text-decoration: underline;
+	color: #fff;
+}
+
+#header #cart .heading a span {
+	padding-right: 15px;
+}
+
+#header #cart .content {
+	clear: both;
+	display: none;
+	position: absolute;
+	top: 31px;
+	right: 0px;
+	padding: 8px;
+	min-width: 300px;
+	min-height: 150px;
+	z-index: 999;
+	border: 1px solid #B6A7A4;
+	background: #FFF;
+}
+
+#header #cart.active .heading {
+	
+}
+
+#header #cart.active .content {
+	display: block;
+}
+
+#header #cart .checkout {
+	text-align: right;
+	clear: both;
+}
+
+#header #cart .empty {
+	padding-top: 50px;
+	text-align: center;
+}
+
+#header #search {
+	position: absolute;
+	top: 40px;
+	left: 500px;
+	z-index: 1;
+}
+
+#header #search input {
+	padding: 1px 38px 1px 10px;
+	width: 180px;
+	height: 28px;
+}
+
+#header #search i.fa-search {
+	position: absolute;
+	top: 7px;
+	left: 160px;
+}
+
+#header #welcome {
+	position: absolute;
+	top: 17px;
+	right: 0px;
+	z-index: 5;
+	width: 298px;
+	text-align: right;
+}
+
+#header .links {
+	position: absolute;
+	right: 0px;
+	bottom: 3px;
+	padding-right: 10px;
+}
+
+#header .links a {
+	float: left;
+	display: block;
+	padding: 0px 0px 0px 7px;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+#header .links a+a {
+	margin-left: 8px;
+}
+
+/* Footer */
+#footer-container {
+	width: 980px;
+	margin: 0 auto;
+	clear: both;
+}
+
+.footer-about {
+	background: #f7f0ee;
+	padding: 30px;
+	color: #393232;
+	margin-bottom: 15px;
+}
+
+.footer-about .text {
+	padding-right: 30px;
+	border-right: 1px solid #EAE5E4;
+	width: 560px;
+	float: left;
+	line-height: 19px;
+}
+
+.footer-about .text h1 {
+	color: #393232;
+	text-transform: uppercase;
+	font-size: 22px;
+	margin-bottom: 15px;
+}
+
+.footer-about .social {
+	margin-top: -7px;
+	float: left;
+	padding-left: 50px;
+}
+
+.footer-about .social h1 {
+	color: #393232;
+	font-family: "Oswald";
+	text-transform: uppercase;
+	font-size: 22px;
+	font-weight: 300;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 9px;
+}
+
+.footer-about .social .soc-img {
+	margin-right: 10px;
+	display: block;
+	float: left;
+	margin-bottom: 5px;
+	font-size: 20px;
+}
+
+.footer-about .social .soc-img .fa-facebook-square {
+	color: #3b5998;
+}
+
+.footer-about .social .soc-img .fa-skype {
+	color: #00aff0;
+}
+
+.footer-about .contact {
+	color: #393232;
+	clear: both;
+	line-height: 19px;
+}
+
+#footer {
+	clear: both;
+	overflow: auto;
+	min-height: 140px;
+	padding: 20px;
+	background: #332f2e;
+}
+
+#footer h3 {
+	color: #f15a3b;
+	font-size: 16px;
+	margin-top: 0px;
+	margin-bottom: 8px;
+	font-family: "Oswald";
+	text-transform: uppercase;
+	font-weight: 300;
+}
+
+#footer .column {
+	float: left;
+	width: 20%;
+}
+
+#footer .column ul {
+	margin: 0;
+	padding: 0;
+}
+
+#footer .column ul li {
+	margin-bottom: 3px;
+	list-style: none;
+	padding-left: 0;
+}
+
+#footer .column a {
+	text-decoration: none;
+	color: #fff;
+	line-height: 23px;
+}
+
+#footer .column a:hover {
+	text-decoration: underline;
+}

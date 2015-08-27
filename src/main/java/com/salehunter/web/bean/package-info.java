@@ -5,4 +5,4 @@
  * @author qct
  *
  */
-package com.salehunter.web.service;
+package com.salehunter.web.bean;

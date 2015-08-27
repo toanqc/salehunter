@@ -5,4 +5,4 @@
  * @author qct
  *
  */
-package com.salehunter.web.repository;
+package com.salehunter.web.resource;

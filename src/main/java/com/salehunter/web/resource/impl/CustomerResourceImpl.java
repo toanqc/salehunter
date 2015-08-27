@@ -11,9 +11,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
 
-import com.salehunter.web.bean.CustomerBeanLocal;
 import com.salehunter.web.entity.Customer;
 import com.salehunter.web.resource.CustomerResource;
+import com.salehunter.web.service.CustomerService;
 
 /**
  * @author qct
@@ -23,7 +23,7 @@ import com.salehunter.web.resource.CustomerResource;
 public class CustomerResourceImpl implements CustomerResource {
 
 	@Inject
-	private CustomerBeanLocal customerRepository;
+	private CustomerService customerRepository;
 	
 	
 	@GET

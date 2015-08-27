@@ -1,4 +1,4 @@
-package com.salehunter.web.bean;
+package com.salehunter.web.service;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import com.salehunter.web.entity.Customer;
  *
  */
 @Local
-public interface CustomerBeanLocal {
+public interface CustomerService {
 
 	/**
 	 * 

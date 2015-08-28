@@ -1,0 +1,40 @@
+<div id="header" ng-controller="appCtrl">
+	<div id="logo">
+		<a href=""><img
+			src="http://www.beauty-oc.any-themes.com/beautyshop1/image/data/logo.png"
+			title="SaleHunter" alt="SaleHunter" /></a>
+	</div>
+	<div id="phone">
+		<b>8(802)234-5678</b><br> <span>{{ "header.phone" | translate }}
+			8:30 am - 6:00 pm</span>
+	</div>
+
+	<div id="search">
+		<input type="text" name="search" value="Search"
+			onclick="this.value = ''" onblur="this.value = 'Search'"><i
+			class="fa fa-search"></i>
+	</div>
+	<div id="cart">
+		<div class="icon text-center" onclick="location.href='#'">
+			<i class="valign-center fa fa-shopping-cart fa-2x"></i>
+		</div>
+		<div class="heading">
+			<a><span id="cart-total">0 item(s) - $0.00</span></a>
+		</div>
+		<div class="content">
+			<div class="empty">Your shopping cart is empty!</div>
+		</div>
+	</div>
+	<div id="welcome">
+		Welcome visitor you can <a href="">login</a> or <a href="">create
+			an account</a>.
+	</div>
+	<form action="" method="post" enctype="multipart/form-data">
+		<div id="language">
+			<img src="assets/img/gb.png" alt="English" title="English"
+				ng-click="changeLanguage('en')" />
+			<img src="assets/img/vi.png" alt="French" title="French"
+				ng-click="changeLanguage('vi')" />
+		</div>
+	</form>
+</div>

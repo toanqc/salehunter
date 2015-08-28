@@ -4,7 +4,6 @@
 package com.salehunter.web.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -14,14 +13,20 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 import com.salehunter.web.converter.GenderConverter;
 
 /**
  * @author qct
- *
+ * @version 1.0
  */
 @Entity
 @Table(name = "Customer")
@@ -34,27 +39,46 @@ public class Customer implements Serializable {
 	@Column(name = "ID", unique = true, nullable = false)
 	private Long id;
 
-	@Column(name = "CUSTOMER_ID")
+	@NotBlank
+	@Size(max = 10)
+	@Column(name = "CUSTOMER_ID", length = 10)
 	private String customerId;
 
-	@Column(name = "FIRST_NAME", nullable = false)
+	@NotBlank
+	@Size(max = 32)
+	@Column(name = "FIRST_NAME", nullable = false, length = 32)
 	private String firstName;
 
-	@Column(name = "LAST_NAME", nullable = false)
+	@NotBlank
+	@Size(max = 32)
+	@Column(name = "LAST_NAME", nullable = false, length = 32)
 	private String lastName;
 
-	@Column(name = "DOB", nullable = false)
-	private Date dob;
-
-	@Column(name = "PHONE", nullable = false)
-	private String phone;
-
-	@Column(name = "GENDER", nullable = false)
+	@Valid
+	@NotNull
+	@Column(name = "GENDER", nullable = false, length = 1)
 	@Convert(converter = GenderConverter.class)
 	private Gender gender;
 
+	@NotBlank
+	@Size(max = 12)
+	@Column(name = "PHONE", nullable = false, length = 12)
+	private String phone;
+
+	@NotBlank
+	@Size(max = 32)
+	@Column(name = "EMAIL", nullable = false, length = 32)
+	private String email;
+
+	@Valid
 	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "ADDRESS_ID")
 	private Address address;
+
+	@Valid
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "USER_ID")
+	private User user;
 
 	/**
 	 * @return the id
@@ -109,18 +133,18 @@ public class Customer implements Serializable {
 	}
 
 	/**
-	 * @return the dob
+	 * @return the gender
 	 */
-	public Date getDob() {
-		return dob;
+	public Gender getGender() {
+		return gender;
 	}
 
 	/**
-	 * @param dob
-	 *            the dob to set
+	 * @param gender
+	 *            the gender to set
 	 */
-	public void setDob(Date dob) {
-		this.dob = dob;
+	public void setGender(Gender gender) {
+		this.gender = gender;
 	}
 
 	/**
@@ -139,18 +163,18 @@ public class Customer implements Serializable {
 	}
 
 	/**
-	 * @return the gender
+	 * @return the email
 	 */
-	public Gender getGender() {
-		return gender;
+	public String getEmail() {
+		return email;
 	}
 
 	/**
-	 * @param gender
-	 *            the gender to set
+	 * @param email
+	 *            the email to set
 	 */
-	public void setGender(Gender gender) {
-		this.gender = gender;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	/**
@@ -166,5 +190,20 @@ public class Customer implements Serializable {
 	 */
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+
+	/**
+	 * @return the user
+	 */
+	public User getUser() {
+		return user;
+	}
+
+	/**
+	 * @param user
+	 *            the user to set
+	 */
+	public void setUser(User user) {
+		this.user = user;
 	}
 }

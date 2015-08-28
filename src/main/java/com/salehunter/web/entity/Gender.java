@@ -3,7 +3,7 @@ package com.salehunter.web.entity;
 /**
  * 
  * @author qct
- *
+ * @version 1.0
  */
 public enum Gender {
 

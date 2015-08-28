@@ -8,11 +8,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  * 
  * @author qct
- *
+ * @version 1.0
  */
 @Entity
 @Table(name = "Address")
@@ -25,17 +28,29 @@ public class Address implements Serializable {
 	@Column(name = "ID", unique = true, nullable = false)
 	private Long id;
 
-	@Column(name = "STREET", nullable = false)
-	private String street;
+	@NotBlank
+	@Size(max = 128)
+	@Column(name = "STREET_1", nullable = false, length = 128)
+	private String street1;
 
-	@Column(name = "CITY")
+	@Column(name = "STREET_2", length = 128)
+	private String street2;
+
+	@Column(name = "CITY", length = 128)
 	private String city;
 
-	@Column(name = "STATE")
-	private String state;
-
-	@Column(name = "ZIP", nullable = false)
+	@NotBlank
+	@Size(max = 10)
+	@Column(name = "ZIP", nullable = false, length = 10)
 	private String zip;
+
+	@NotBlank
+	@Size(max = 32)
+	@Column(name = "COUNTRY", nullable = false, length = 32)
+	private String country;
+
+	@Column(name = "STATE", length = 2)
+	private String state;
 
 	/**
 	 * @return the id
@@ -45,18 +60,33 @@ public class Address implements Serializable {
 	}
 
 	/**
-	 * @return the street
+	 * @return the street1
 	 */
-	public String getStreet() {
-		return street;
+	public String getStreet1() {
+		return street1;
 	}
 
 	/**
-	 * @param street
-	 *            the street to set
+	 * @param street1
+	 *            the street1 to set
 	 */
-	public void setStreet(String street) {
-		this.street = street;
+	public void setStreet1(String street1) {
+		this.street1 = street1;
+	}
+
+	/**
+	 * @return the street2
+	 */
+	public String getStreet2() {
+		return street2;
+	}
+
+	/**
+	 * @param street2
+	 *            the street2 to set
+	 */
+	public void setStreet2(String street2) {
+		this.street2 = street2;
 	}
 
 	/**
@@ -75,6 +105,21 @@ public class Address implements Serializable {
 	}
 
 	/**
+	 * @return the zip
+	 */
+	public String getZip() {
+		return zip;
+	}
+
+	/**
+	 * @param zip
+	 *            the zip to set
+	 */
+	public void setZip(String zip) {
+		this.zip = zip;
+	}
+
+	/**
 	 * @return the state
 	 */
 	public String getState() {
@@ -90,17 +135,18 @@ public class Address implements Serializable {
 	}
 
 	/**
-	 * @return the zip
+	 * @return the country
 	 */
-	public String getZip() {
-		return zip;
+	public String getCountry() {
+		return country;
 	}
 
 	/**
-	 * @param zip
-	 *            the zip to set
+	 * @param country
+	 *            the country to set
 	 */
-	public void setZip(String zip) {
-		this.zip = zip;
+	public void setCountry(String country) {
+		this.country = country;
 	}
+
 }

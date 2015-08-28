@@ -17,106 +17,34 @@
 	href="resources/css/lib/font-awesome-4.4.0/css/font-awesome.min.css" />
 <link rel="stylesheet" type="text/css"
 	href="resources/css/lib/flexslider.css" />
-<link rel="stylesheet" type="text/css"
-	href="resources/css/main.css" />
+<link rel="stylesheet" type="text/css" href="resources/css/main.css" />
 <link rel="stylesheet" type="text/css"
 	href="resources/css/header-footer.css" />
 
 <script type="text/javascript"
 	src="resources/js/lib/jquery-2.1.4.min.js"></script>
-
 <script type="text/javascript"
 	src="resources/js/lib/jquery.flexslider-min.js"></script>
-
 <script type="text/javascript"
 	src="resources/js/lib/jquery.carouFredSel-6.2.1-packed.js"></script>
+<script type="text/javascript" src="resources/js/lib/angular.min.js"></script>
+<script type="text/javascript" src="resources/js/lib/angular-cookies.min.js"></script>
+<script type="text/javascript" src="resources/js/lib/angular-translate.min.js"></script>
+<script type="text/javascript" src="resources/js/lib/angular-translate-storage-cookie.min.js"></script>
+<script type="text/javascript" src="resources/js/lib/angular-translate-storage-local.min.js"></script>
+<script type="text/javascript" src="resources/js/lib/angular-translate-loader-partial.min.js"></script>
 
+<script type="text/javascript" src="resources/js/app.js"></script>
 <script type="text/javascript" src="resources/js/home.js"></script>
 
 </head>
-<body>
+<body ng-app="salehunter">
 
-	<div id="header-menu-bg"></div>
-
-	<div id="header_menu">
-		<a
-			href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=common/home">Home</a><a
-			href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=account/wishlist"
-			id="wishlist-total">Wish List (0)</a><a
-			href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=account/account">My
-			Account</a><a
-			href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=checkout/cart">Shopping
-			Cart</a><a
-			href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=checkout/checkout">Checkout</a>
-		<form
-			action="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=module/currency"
-			method="post" enctype="multipart/form-data">
-			<div id="currency">
-				<a title="Euro"
-					onclick="$('input[name=\'currency_code\']').attr('value', 'EUR'); $(this).parent().parent().submit();">€</a>
-				<a title="Pound Sterling"
-					onclick="$('input[name=\'currency_code\']').attr('value', 'GBP'); $(this).parent().parent().submit();">£</a>
-				<a title="US Dollar" class="active">$</a> <input type="hidden"
-					name="currency_code" value="" /> <input type="hidden"
-					name="redirect"
-					value="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=common/home" />
-			</div>
-		</form>
-	</div>
+	<div ng-include="'views/partials/menu.html'"></div>
 
 	<div id="box-shadow">
 		<div id="container">
-			<div id="header">
-				<div id="logo">
-					<a
-						href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=common/home"><img
-						src="http://www.beauty-oc.any-themes.com/beautyshop1/image/data/logo.png"
-						title="BeautyShop" alt="BeautyShop" /></a>
-				</div>
-				<div id="phone">
-					<b>8(802)234-5678</b><br> <span>Call us Monday -
-						Saturday: 8:30 am - 6:00 pm</span>
-				</div>
-
-				<div id="search">
-					<input type="text" name="search" value="Search"
-						onclick="this.value = ''" onblur="this.value = 'Search'"><i
-						class="fa fa-search"></i>
-				</div>
-				<div id="cart">
-					<div class="icon text-center"
-						onclick="location.href='http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=checkout/checkout'">
-						<i class="valign-center fa fa-shopping-cart fa-2x"></i>
-					</div>
-					<div class="heading">
-						<a><span id="cart-total">0 item(s) - $0.00</span></a>
-					</div>
-					<div class="content">
-						<div class="empty">Your shopping cart is empty!</div>
-					</div>
-				</div>
-				<div id="welcome">
-					Welcome visitor you can <a
-						href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=account/login">login</a>
-					or <a
-						href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=account/register">create
-						an account</a>.
-				</div>
-				<form
-					action="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=module/language"
-					method="post" enctype="multipart/form-data">
-					<div id="language">
-						<img src="resources/img/gb.png" alt="English"
-							title="English"
-							onclick="$('input[name=\'language_code\']').attr('value', 'en'); $(this).parent().parent().submit();" />
-						<img src="resources/img/fr.png" alt="French" title="French"
-							onclick="$('input[name=\'language_code\']').attr('value', 'fr'); $(this).parent().parent().submit();" />
-						<input type="hidden" name="language_code" value="" /> <input
-							type="hidden" name="redirect"
-							value="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=common/home" />
-					</div>
-				</form>
-			</div>
+			<div ng-include="'views/partials/header.html'"></div>
 
 			<div id="content">
 				<div class="flexslider">
@@ -132,10 +60,9 @@
 
 				<div class="mini-sliders">
 					<a href="#"><img class="fade-image"
-						src="resources/img/slide/minislider1.jpg"
-						alt="Slider 1 mini" /></a> <a href="#"><img class="fade-image"
-						src="resources/img/slide/minislider2.jpg"
-						alt="Slider 2 mini" /></a>
+						src="resources/img/slide/minislider1.jpg" alt="Slider 1 mini" /></a>
+					<a href="#"><img class="fade-image"
+						src="resources/img/slide/minislider2.jpg" alt="Slider 2 mini" /></a>
 
 				</div>
 				<div class="clear"></div>
@@ -159,15 +86,12 @@
 
 									<div class="view-content">
 										<div class="image">
-											<a
-												href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=product/product&amp;product_id=43"><img
+											<a href=""><img
 												src="http://www.beauty-oc.any-themes.com/beautyshop1/image/cache/data/7-188x204.jpg"
 												alt="MacBook Pro 16gb 256 gb 15&quot; and FREE GIFT!" /></a>
 										</div>
 										<div class="name">
-											<a
-												href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=product/product&amp;product_id=43">
-												MacBook Pro 256 GB</a>
+											<a href=""> MacBook Pro 256 GB</a>
 										</div>
 										<div class="price">$589.50</div>
 
@@ -180,7 +104,7 @@
 										<div class="buttons-compare" title="Add to Compare"
 											onclick="addToCompare('43');"></div>
 										<div class="buttons-more" title="MacBook Pro 16gb 256 gb..."
-											onclick="location.href='http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=product/product&amp;product_id=43'"></div>
+											onclick="location.href='#'"></div>
 									</div>
 								</div>
 							</div>
@@ -189,15 +113,12 @@
 
 									<div class="view-content">
 										<div class="image">
-											<a
-												href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=product/product&amp;product_id=40"><img
+											<a href=""><img
 												src="http://www.beauty-oc.any-themes.com/beautyshop1/image/cache/data/15-188x204.jpg"
 												alt="iPhone" /></a>
 										</div>
 										<div class="name">
-											<a
-												href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=product/product&amp;product_id=40">
-												iPhone</a>
+											<a href=""> iPhone</a>
 										</div>
 										<div class="price">$120.68</div>
 
@@ -210,7 +131,7 @@
 										<div class="buttons-compare" title="Add to Compare"
 											onclick="addToCompare('40');"></div>
 										<div class="buttons-more" title="iPhone"
-											onclick="location.href='http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=product/product&amp;product_id=40'"></div>
+											onclick="location.href='#'"></div>
 									</div>
 								</div>
 							</div>
@@ -220,15 +141,12 @@
 									<div class="view-content">
 										<div class="image">
 											<div class="sale-badge">Sale</div>
-											<a
-												href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=product/product&amp;product_id=42"><img
+											<a href=""><img
 												src="http://www.beauty-oc.any-themes.com/beautyshop1/image/cache/data/1-188x204.jpg"
 												alt="Apple Cinema 30&quot;" /></a>
 										</div>
 										<div class="name">
-											<a
-												href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=product/product&amp;product_id=42">
-												Apple Cinema 30&quot;</a>
+											<a href=""> Apple Cinema 30&quot;</a>
 										</div>
 										<div class="price">
 											<span class="price-old">$118,013.13</span> <span
@@ -244,12 +162,11 @@
 										<div class="buttons-compare" title="Add to Compare"
 											onclick="addToCompare('42');"></div>
 										<div class="buttons-more" title="Apple Cinema 30&quot;"
-											onclick="location.href='http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=product/product&amp;product_id=42'"></div>
+											onclick="location.href='#'"></div>
 									</div>
 
 									<div class="box-product-rating">
-										<img src="resources/img/stars-5.png"
-											alt="Based on 1 reviews." />
+										<img src="resources/img/stars-5.png" alt="Based on 1 reviews." />
 									</div>
 								</div>
 							</div>
@@ -258,15 +175,12 @@
 
 									<div class="view-content">
 										<div class="image">
-											<a
-												href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=product/product&amp;product_id=49"><img
+											<a href=""><img
 												src="http://www.beauty-oc.any-themes.com/beautyshop1/image/cache/data/11-188x204.jpg"
 												alt="Samsung Galaxy Tab" /></a>
 										</div>
 										<div class="name">
-											<a
-												href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=product/product&amp;product_id=49">
-												Samsung Galaxy Tab</a>
+											<a href="#"> Samsung Galaxy Tab</a>
 										</div>
 										<div class="price">$236.99</div>
 
@@ -279,7 +193,7 @@
 										<div class="buttons-compare" title="Add to Compare"
 											onclick="addToCompare('49');"></div>
 										<div class="buttons-more" title="Samsung Galaxy Tab 10.1"
-											onclick="location.href='http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=product/product&amp;product_id=49'"></div>
+											onclick="location.href='#'"></div>
 									</div>
 								</div>
 							</div>
@@ -288,15 +202,12 @@
 
 									<div class="view-content">
 										<div class="image">
-											<a
-												href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=product/product&amp;product_id=46"><img
+											<a href=""><img
 												src="http://www.beauty-oc.any-themes.com/beautyshop1/image/cache/data/13-188x204.jpg"
 												alt="Sony VAIO" /></a>
 										</div>
 										<div class="name">
-											<a
-												href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=product/product&amp;product_id=46">
-												Sony VAIO</a>
+											<a href=""> Sony VAIO</a>
 										</div>
 										<div class="price">$1,177.00</div>
 
@@ -309,7 +220,7 @@
 										<div class="buttons-compare" title="Add to Compare"
 											onclick="addToCompare('46');"></div>
 										<div class="buttons-more" title="Sony VAIO"
-											onclick="location.href='http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=product/product&amp;product_id=46'"></div>
+											onclick="location.href='#'"></div>
 									</div>
 								</div>
 							</div>
@@ -318,8 +229,7 @@
 
 									<div class="view-content">
 										<div class="image">
-											<a
-												href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=product/product&amp;product_id=47"><img
+											<a href=""><img
 												src="http://www.beauty-oc.any-themes.com/beautyshop1/image/cache/data/3-188x204.jpg"
 												alt="HP LP3065" /></a>
 										</div>
@@ -469,86 +379,7 @@
 			</div>
 		</div>
 
-		<div id="footer-container">
-			<div class="footer-about">
-				<div class="text">
-					<h1>About SALE HUNTER</h1>
-					<p>We provide a way for you to buy products in the United
-						States and then we will ship directly and then you can pick up
-						your items in Vietnam ...</p>
-				</div>
-				<div class="social">
-
-					<a href="http://facebook.com/pages/dx/115403961948855"
-						class="soc-img"><img class="fade-image"><i
-						class="fa fa-facebook-square"></i></a> <a href="skype://trinh_nganha"
-						class="soc-img"><i class="fa fa-skype"></i></a>
-					<div class="contact">
-						<div class="phone">
-							<b>Phone:</b> 8(802)234-5678, 8(803)234-5678
-						</div>
-						<div class="fax">
-							<b>Fax:</b> 8(800)234-5678
-						</div>
-						<div class="email">
-							<a href="mailto:support@salehunter.com">support@salehunter.com</a>
-						</div>
-						<div class="email">
-							<a href="mailto:sales@salehunter.com">sales@salehunter.com</a>
-						</div>
-					</div>
-				</div>
-				<div class="clear"></div>
-			</div>
-
-			<div id="footer">
-				<div class="column">
-					<h3>Information</h3>
-					<ul>
-						<li><a
-							href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=information/information&amp;information_id=4">About
-								Us</a></li>
-						<li><a
-							href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=information/information&amp;information_id=6">Delivery
-								Information</a></li>
-						<li><a
-							href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=information/information&amp;information_id=3">Privacy
-								Policy</a></li>
-						<li><a
-							href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=information/information&amp;information_id=5">Terms
-								&amp; Conditions</a></li>
-					</ul>
-				</div>
-				<div class="column">
-					<h3>Customer Service</h3>
-					<ul>
-						<li><a
-							href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=information/contact">Contact
-								Us</a></li>
-						<li><a
-							href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=account/return/insert">Returns</a></li>
-						<li><a
-							href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=information/sitemap">Site
-								Map</a></li>
-					</ul>
-				</div>
-				<div class="column">
-					<h3>Extras</h3>
-					<ul>
-						<li><a
-							href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=product/manufacturer">Brands</a></li>
-						<li><a
-							href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=account/voucher">Gift
-								Vouchers</a></li>
-						<li><a
-							href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=affiliate/account">Affiliates</a></li>
-						<li><a
-							href="http://www.beauty-oc.any-themes.com/beautyshop1/index.php?route=product/special">Specials</a></li>
-					</ul>
-				</div>
-
-			</div>
-		</div>
+		<div ng-include="'views/partials/footer.html'"></div>
 	</div>
 </body>
 </html>

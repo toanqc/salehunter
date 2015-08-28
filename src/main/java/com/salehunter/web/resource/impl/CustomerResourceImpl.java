@@ -23,19 +23,23 @@ import com.salehunter.web.service.CustomerService;
 public class CustomerResourceImpl implements CustomerResource {
 
 	@Inject
-	private CustomerService customerRepository;
-	
-	
+	private CustomerService customerService;
+
+	@Override
 	@GET
 	@Path("/{param}")
-	@Override
 	public Response printMessage(@PathParam("param") String msg) {
 		String result = "Restful example : " + msg;
 		return Response.status(200).entity(result).build();
 	}
 
 	@Override
+	@GET
+	@Path("/")
 	public List<Customer> getAllCustomers() {
-		return customerRepository.getAllCustomers();
+		List<Customer> allCustomers = customerService.getAllCustomers();
+		System.out.println("size: " + allCustomers.size());
+		return allCustomers;
+
 	}
 }

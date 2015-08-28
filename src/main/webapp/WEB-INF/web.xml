@@ -34,7 +34,11 @@
 		<servlet-name>javax.ws.rs.core.Application</servlet-name>
 		<url-pattern>/v1/*</url-pattern>
 	</servlet-mapping>
-	 -->
+	-->
+
+	<session-config>
+		<session-timeout>60</session-timeout>
+	</session-config>
 
 	<!-- Welcome and error page -->
 	<error-page>

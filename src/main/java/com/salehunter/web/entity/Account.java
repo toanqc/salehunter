@@ -29,8 +29,8 @@ import com.salehunter.web.converter.GenderConverter;
  * @version 1.0
  */
 @Entity
-@Table(name = "Customer")
-public class Customer implements Serializable {
+@Table(name = "Account")
+public class Account implements Serializable {
 
 	private static final long serialVersionUID = 202063969026347451L;
 
@@ -41,8 +41,8 @@ public class Customer implements Serializable {
 
 	@NotBlank
 	@Size(max = 10)
-	@Column(name = "CUSTOMER_ID", length = 10)
-	private String customerId;
+	@Column(name = "ACCOUNT_ID", length = 10)
+	private String accountId;
 
 	@NotBlank
 	@Size(max = 32)
@@ -88,18 +88,18 @@ public class Customer implements Serializable {
 	}
 
 	/**
-	 * @return the customerId
+	 * @return the accountId
 	 */
-	public String getCustomerId() {
-		return customerId;
+	public String getAccountId() {
+		return accountId;
 	}
 
 	/**
-	 * @param customerId
-	 *            the customerId to set
+	 * @param accountId
+	 *            the accountId to set
 	 */
-	public void setCustomerId(String customerId) {
-		this.customerId = customerId;
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
 	}
 
 	/**

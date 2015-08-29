@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import com.salehunter.web.entity.Customer;
+import com.salehunter.web.entity.Account;
 
 /**
  * 
@@ -12,11 +12,11 @@ import com.salehunter.web.entity.Customer;
  *
  */
 @Local
-public interface CustomerService {
+public interface AccountService {
 
 	/**
 	 * 
 	 * @return
 	 */
-	List<Customer> getAllCustomers();
+	List<Account> getAllAccounts();
 }

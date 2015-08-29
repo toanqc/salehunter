@@ -4,14 +4,14 @@ import java.util.List;
 
 import javax.ws.rs.core.Response;
 
-import com.salehunter.web.entity.Customer;
+import com.salehunter.web.entity.Account;
 
 /**
  * 
  * @author qct
  *
  */
-public interface CustomerResource {
+public interface AccountResource {
 
 	Response printMessage(String msg);
 
@@ -19,5 +19,5 @@ public interface CustomerResource {
 	 * 
 	 * @return
 	 */
-	List<Customer> getAllCustomers();
+	List<Account> getAllAccounts();
 }

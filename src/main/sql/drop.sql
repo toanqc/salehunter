@@ -1,3 +1,2 @@
 DROP TABLE Address;
-DROP TABLE Customer;
-DROP SEQUENCE ID;
+DROP TABLE Account;

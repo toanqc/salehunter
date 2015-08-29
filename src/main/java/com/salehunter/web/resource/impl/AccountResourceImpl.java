@@ -11,19 +11,19 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
 
-import com.salehunter.web.entity.Customer;
-import com.salehunter.web.resource.CustomerResource;
-import com.salehunter.web.service.CustomerService;
+import com.salehunter.web.entity.Account;
+import com.salehunter.web.resource.AccountResource;
+import com.salehunter.web.service.AccountService;
 
 /**
  * @author qct
  *
  */
-@Path("customers")
-public class CustomerResourceImpl implements CustomerResource {
+@Path("accounts")
+public class AccountResourceImpl implements AccountResource {
 
 	@Inject
-	private CustomerService customerService;
+	private AccountService accountService;
 
 	@Override
 	@GET
@@ -36,10 +36,10 @@ public class CustomerResourceImpl implements CustomerResource {
 	@Override
 	@GET
 	@Path("/")
-	public List<Customer> getAllCustomers() {
-		List<Customer> allCustomers = customerService.getAllCustomers();
-		System.out.println("size: " + allCustomers.size());
-		return allCustomers;
+	public List<Account> getAllAccounts() {
+		List<Account> allAccounts = accountService.getAllAccounts();
+		System.out.println("size: " + allAccounts.size());
+		return allAccounts;
 
 	}
 }

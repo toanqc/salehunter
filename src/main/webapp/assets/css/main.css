@@ -808,3 +808,55 @@ a img {
 	height: 284px;
 	margin-bottom: 4px;
 }
+
+.breadcrumb {
+	margin-bottom: 10px;
+}
+
+#content .content {
+	padding: 10px;
+	overflow: auto;
+	margin-bottom: 10px;
+	border: 1px solid #EAE5E4;
+}
+#content .content .left {
+	float: left;
+	width: 49%;
+}
+#content .content .right {
+	float: right;
+	width: 49%;
+}
+#content .content ul {
+	list-style:none;
+	padding-left:30px;
+}
+#content .content ul li {
+	margin-bottom:10px;
+}
+
+/* button */
+a.button, input.button {
+	padding:7px 20px 7px 20px;
+	text-transform:uppercase;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-family: "Oswald";
+	font-weight: bold;
+	background: #B6A7A4;
+	text-decoration: none;
+	
+}
+a.button {
+	display: inline-block;
+	text-decoration: none;
+	
+}
+input.button {
+	margin: 0;
+	border: 0;
+	
+}
+a.button:hover, input.button:hover {
+	background:#F15A3B;
+}

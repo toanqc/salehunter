@@ -29,6 +29,9 @@ app.config([ '$routeProvider', function($routeProvider) {
 	}).when('/accounts/register', {
 		templateUrl : 'views/accounts-register.html',
 		controller : 'accountCtrl'
+	}).when('/accounts/login', {
+		templateUrl : 'views/login.html',
+		controller : 'loginCtrl'
 	}).otherwise({
 		templateUrl : 'views/errors/404.html'
 	});

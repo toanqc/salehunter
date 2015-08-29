@@ -1,0 +1,18 @@
+{
+	"login": {
+		"breadcrumb": {
+			"home": "Home",
+			"account": "Account",
+			"login": "Login"
+		},
+		"accountlogin": "Account Login",
+		"newcustomer": "New Customer",
+		"registeraccount": "Register Account",
+		"registerdescription": "By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.",
+		"returningcustomer": "Returning Customer",
+		"returningdescription": "I am a returning customer",
+		"email": "E-Mail Address",
+		"password": "Password",
+		"forgottenpassword": "Forgotten Password"
+	}
+}

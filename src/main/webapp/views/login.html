@@ -1,0 +1,33 @@
+<div ng-controller="loginCtrl">
+	<div class="breadcrumb">
+		<a href="#/">{{"login.breadcrumb.home" | translate}}</a> &raquo; <a
+			href="#/accounts/home">{{"login.breadcrumb.account" | translate}}</a>
+		&raquo; <a href="#/accounts/login">{{"login.breadcrumb.login" |
+			translate}}</a>
+	</div>
+	<h1>{{"login.accountlogin" | translate}}</h1>
+	<div class="login-content">
+		<div class="left">
+			<h2>{{"login.newcustomer" | translate}}</h2>
+			<div class="content">
+				<p>
+					<b>{{"login.registeraccount" | translate}}</b>
+				</p>
+				<p>{{"login.registerdescription" | translate}}</p>
+				<a href="#/accounts/register" class="button">Continue</a>
+			</div>
+		</div>
+		<div class="right">
+			<h2>{{"login.returningcustomer" | translate}}</h2>
+			<div class="content">
+				<p>{{"login.returningdescription" | translate}}</p>
+				<b>{{"login.email" | translate}}:</b><br /> <input type="text"
+					name="email" value="" /> <br /> <br /> <b>{{"login.password"
+					| translate}}:</b><br /> <input type="password" name="password"
+					value="" /> <br /> <a href="#">{{"login.forgottenpassword" |
+					translate}}</a><br /> <br /> <input type="submit" value="Login"
+					class="button" ng-click="login()" />
+			</div>
+		</div>
+	</div>
+</div>

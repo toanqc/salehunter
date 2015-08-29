@@ -1,0 +1,18 @@
+.login-content {
+	margin-bottom: 20px;
+	overflow: auto;
+}
+
+.login-content .left {
+	float: left;
+	width: 48%;
+}
+
+.login-content .right {
+	float: right;
+	width: 48%
+}
+
+.login-content .left .content, .login-content .right .content {
+	min-height: 190px;
+}

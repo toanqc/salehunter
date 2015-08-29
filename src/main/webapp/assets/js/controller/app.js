@@ -1,7 +1,7 @@
 'use strict';
 
-var app = angular.module('salehunter', [ 'ui.router', 'ngCookies',
-		'pascalprecht.translate' ]);
+var app = angular.module('salehunter', [ 'http-auth-interceptor', 'ui.router',
+		'ngCookies', 'pascalprecht.translate', 'content-mocks' ]);
 
 app.config(function($translateProvider, $translatePartialLoaderProvider) {
 
@@ -40,8 +40,25 @@ app.config(function($stateProvider, $urlRouterProvider) {
 	}).state('accounts-home', {
 		url : '/accounts/home',
 		templateUrl : 'views/account-home.html',
+		data : {
+			requiresLogin : true
+		}
 	}).state('404', {
 		url : '/404',
 		templateUrl : 'views/errors/404.html'
 	});
+});
+
+app.run(function($rootScope, $state) {
+
+	$rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
+		var isAuthenticationRequired = toState.data
+				&& toState.data.requiresLogin;
+
+		if (isAuthenticationRequired && $rootScope.currentUser === undefined) {
+			event.preventDefault();
+			$state.go('accounts-login');
+		}
+	});
+
 });

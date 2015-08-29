@@ -12,7 +12,7 @@ app.config(function($translateProvider, $translatePartialLoaderProvider) {
 	$translateProvider.preferredLanguage('en');
 	$translateProvider.useSanitizeValueStrategy(null);
 	$translateProvider.useLocalStorage();
-	$translatePartialLoaderProvider.addPart('header');
+	$translatePartialLoaderProvider.addPart('header-footer');
 
 });
 
@@ -32,5 +32,4 @@ app.config([ '$routeProvider', function($routeProvider) {
 	}).otherwise({
 		templateUrl : 'views/errors/404.html'
 	});
-
 } ]);

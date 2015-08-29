@@ -1,0 +1,42 @@
+{
+    "header": {
+    	"menu": {
+    		"home": "Home",
+    		"wishlist": "Wish List",
+    		"myaccount": "My Account",
+    		"shoppingcart": "Shopping Cart",
+    		"checkout": "Checkout"
+    	},
+        "phone": "Gọi chúng tôi thứ Hai - Bảy",
+        "welcome": "Welcome visitor you can",
+        "login": "login",
+        "or": "or",
+        "create": "create an account"
+    },
+	"footer": {
+        "information": {
+        	"information": "Information",
+        	"aboutus": "About Us",
+        	"deliveryinformation": "Delivery Information",
+        	"privacypolicy": "Privacy Policy",
+        	"termscondition": "Terms & Conditions"
+        },
+        "customerservice": {
+        	"customerservice": "Customer Service",
+        	"contactus": "Contact Us",
+        	"returns": "Returns",
+        	"sitemap": "Site Map"
+        },
+        "extras": {
+        	"extras": "Extras",
+        	"brands": "Brands",
+        	"giftvouchers": "Gift Vouchers",
+        	"affiliates": "Affiliates",
+        	"specials": "Specials"
+        },
+        "about": "About SALE HUNTER",
+        "aboutdetail": "We provide a way for you to buy products in the United States and then we will ship directly and then you can pick up your items in Vietnam ...",
+        "phone": "Phone",
+        "fax": "Fax"
+    }
+}

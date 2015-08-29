@@ -1,16 +1,11 @@
 <div id="header-menu-bg"></div>
-<div id="header_menu">
-	<a href="">Home</a><a href="" id="wishlist-total">Wish List (0)</a><a
-		href="">My Account</a><a href="">Shopping Cart</a><a href="">Checkout</a>
-	<form action="" method="post" enctype="multipart/form-data">
-		<div id="currency">
-			<a title="Euro"
-				onclick="$('input[name=\'currency_code\']').attr('value', 'EUR'); $(this).parent().parent().submit();">€</a>
-			<a title="Pound Sterling"
-				onclick="$('input[name=\'currency_code\']').attr('value', 'GBP'); $(this).parent().parent().submit();">£</a>
-			<a title="US Dollar" class="active">$</a> <input type="hidden"
-				name="currency_code" value="" /> <input type="hidden"
-				name="redirect" value="" />
-		</div>
-	</form>
+<div id="header_menu" ng-controller="appCtrl">
+	<a href="">{{"header.menu.home" | translate}}</a><a href=""
+		id="wishlist-total">{{"header.menu.wishlist" | translate}} (0)</a><a
+		href="">{{"header.menu.myaccount" | translate}}</a><a href="">{{"header.menu.shoppingcart"
+		| translate}}</a><a href="">{{"header.menu.checkout" | translate}}</a>
+	<div id="currency">
+		<a title="Euro" onclick="">€</a> <a title="Pound Sterling" onclick="">£</a>
+		<a title="US Dollar" class="active">$</a>
+	</div>
 </div>

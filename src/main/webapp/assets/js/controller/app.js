@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('salehunter', [ 'ngRoute', 'ngCookies',
+var app = angular.module('salehunter', [ 'ui.router', 'ngCookies',
 		'pascalprecht.translate' ]);
 
 app.config(function($translateProvider, $translatePartialLoaderProvider) {
@@ -16,23 +16,29 @@ app.config(function($translateProvider, $translatePartialLoaderProvider) {
 
 });
 
-app.controller('appCtrl', [ '$scope', '$translate',
-		function($scope, $translate) {
-			$scope.changeLanguage = function(langKey) {
-				$translate.use(langKey);
-			};
-		} ]);
+app.controller('appCtrl', function($scope, $translate) {
+	$scope.changeLanguage = function(langKey) {
+		$translate.use(langKey);
+	};
+});
 
-app.config([ '$routeProvider', function($routeProvider) {
-	$routeProvider.when('/', {
+app.config(function($stateProvider, $urlRouterProvider) {
+	$urlRouterProvider.when('', '/');
+	$urlRouterProvider.otherwise('404');
+
+	$stateProvider.state('/', {
+		url : '/',
 		templateUrl : 'views/home.html'
-	}).when('/accounts/register', {
+	}).state('accounts-register', {
+		url : '/accounts/register',
 		templateUrl : 'views/accounts-register.html',
 		controller : 'accountCtrl'
-	}).when('/accounts/login', {
+	}).state('accounts-login', {
+		url : '/accounts/login',
 		templateUrl : 'views/login.html',
 		controller : 'loginCtrl'
-	}).otherwise({
+	}).state('404', {
+		url : '/404',
 		templateUrl : 'views/errors/404.html'
 	});
-} ]);
+});

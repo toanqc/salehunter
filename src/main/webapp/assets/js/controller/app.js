@@ -1,7 +1,7 @@
 'use strict';
 
-var app = angular.module('salehunter',
-		[ 'ngCookies', 'pascalprecht.translate' ]);
+var app = angular.module('salehunter', [ 'ngRoute', 'ngCookies',
+		'pascalprecht.translate' ]);
 
 app.config(function($translateProvider, $translatePartialLoaderProvider) {
 
@@ -22,3 +22,15 @@ app.controller('appCtrl', [ '$scope', '$translate',
 				$translate.use(langKey);
 			};
 		} ]);
+
+app.config([ '$routeProvider', function($routeProvider) {
+	$routeProvider.when('/', {
+		templateUrl : 'views/home.html'
+	}).when('/accounts/register', {
+		templateUrl : 'views/accounts-register.html',
+		controller : 'accountCtrl'
+	}).otherwise({
+		templateUrl : 'views/errors/404.html'
+	});
+
+} ]);

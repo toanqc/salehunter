@@ -41,12 +41,8 @@
 	</session-config>
 
 	<!-- Welcome and error page -->
-	<error-page>
-		<error-code>404</error-code>
-		<location>/views/errors/404.html</location>
-	</error-page>
 	<welcome-file-list>
-		<welcome-file>/views/home.html</welcome-file>
+		<welcome-file>/views/base.html</welcome-file>
 	</welcome-file-list>
 </web-app>
  

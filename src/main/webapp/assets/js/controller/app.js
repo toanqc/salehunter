@@ -31,12 +31,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
 		templateUrl : 'views/home.html'
 	}).state('accounts-register', {
 		url : '/accounts/register',
-		templateUrl : 'views/accounts-register.html',
+		templateUrl : 'views/account-register.html',
 		controller : 'accountCtrl'
 	}).state('accounts-login', {
 		url : '/accounts/login',
 		templateUrl : 'views/login.html',
 		controller : 'loginCtrl'
+	}).state('accounts-home', {
+		url : '/accounts/home',
+		templateUrl : 'views/account-home.html',
 	}).state('404', {
 		url : '/404',
 		templateUrl : 'views/errors/404.html'

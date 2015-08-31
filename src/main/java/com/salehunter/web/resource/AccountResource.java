@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ws.rs.core.Response;
 
 import com.salehunter.web.entity.Account;
+import com.salehunter.web.entity.User;
 
 /**
  * 
@@ -20,4 +21,12 @@ public interface AccountResource {
 	 * @return
 	 */
 	List<Account> getAllAccounts();
+
+	/**
+	 * 
+	 * @param email
+	 * @param password
+	 * @return
+	 */
+	Account isLogin(User user);
 }

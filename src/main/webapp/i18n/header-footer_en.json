@@ -11,7 +11,9 @@
         "welcome": "Welcome visitor you can",
         "login": "login",
         "or": "or",
-        "create": "create an account"
+        "create": "create an account",
+        "loggedin": "You are logged in as",
+        "logout": "Logout"
     },
 	"footer": {
         "information": {

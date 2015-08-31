@@ -3,16 +3,11 @@
  */
 package com.salehunter.web.entity;
 
-import java.io.Serializable;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -30,14 +25,9 @@ import com.salehunter.web.converter.GenderConverter;
  */
 @Entity
 @Table(name = "Account")
-public class Account implements Serializable {
+public class Account extends Model {
 
 	private static final long serialVersionUID = 202063969026347451L;
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID", unique = true, nullable = false)
-	private Long id;
 
 	@NotBlank
 	@Size(max = 10)
@@ -79,13 +69,6 @@ public class Account implements Serializable {
 	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "USER_ID")
 	private User user;
-
-	/**
-	 * @return the id
-	 */
-	public Long getId() {
-		return id;
-	}
 
 	/**
 	 * @return the accountId

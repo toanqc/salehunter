@@ -4,9 +4,6 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -19,14 +16,9 @@ import org.hibernate.validator.constraints.NotBlank;
  */
 @Entity
 @Table(name = "Address")
-public class Address implements Serializable {
+public class Address extends Model implements Serializable {
 
 	private static final long serialVersionUID = 3012381205351883526L;
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID", unique = true, nullable = false)
-	private Long id;
 
 	@NotBlank
 	@Size(max = 128)
@@ -51,13 +43,6 @@ public class Address implements Serializable {
 
 	@Column(name = "STATE", length = 2)
 	private String state;
-
-	/**
-	 * @return the id
-	 */
-	public Long getId() {
-		return id;
-	}
 
 	/**
 	 * @return the street1

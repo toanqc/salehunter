@@ -1,6 +1,5 @@
 package com.salehunter.web.entity;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,15 +7,11 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
@@ -29,14 +24,9 @@ import org.hibernate.validator.constraints.NotBlank;
  */
 @Entity
 @Table(name = "User")
-public class User implements Serializable {
+public class User extends Model {
 
 	private static final long serialVersionUID = -622855600192016623L;
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID")
-	private Long id;
 
 	@NotBlank
 	@Size(max = 32)
@@ -53,10 +43,6 @@ public class User implements Serializable {
 	@Transient
 	private String confirmPassword;
 
-	@NotNull
-	@Column(name = "ENABLED", nullable = false, length = 1)
-	private Boolean enabled;
-
 	@Valid
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "EMAIL", referencedColumnName = "EMAIL")
@@ -68,19 +54,8 @@ public class User implements Serializable {
 	 * </p>
 	 */
 	public User() {
-		this.enabled = Boolean.TRUE;
+		this.active = true;
 		this.authorities = new ArrayList<Authority>();
-	}
-
-	/**
-	 * <p>
-	 * Getter for the field <code>id</code>.
-	 * </p>
-	 *
-	 * @return the id
-	 */
-	public Long getId() {
-		return id;
 	}
 
 	/**
@@ -162,29 +137,6 @@ public class User implements Serializable {
 	 */
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	/**
-	 * <p>
-	 * Getter for the field <code>enabled</code>.
-	 * </p>
-	 *
-	 * @return the enabled
-	 */
-	public Boolean isEnabled() {
-		return enabled;
-	}
-
-	/**
-	 * <p>
-	 * Setter for the field <code>enabled</code>.
-	 * </p>
-	 *
-	 * @param enabled
-	 *            the enabled to set
-	 */
-	public void setEnabled(Boolean enabled) {
-		this.enabled = enabled;
 	}
 
 	/**

@@ -4,9 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -22,12 +19,9 @@ import org.hibernate.validator.constraints.NotBlank;
  */
 @Entity
 @Table(name = "Authority")
-public class Authority {
+public class Authority extends Model {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID")
-	private Long id;
+	private static final long serialVersionUID = -2858034227972776723L;
 
 	@NotBlank
 	@Size(max = 32)
@@ -48,17 +42,6 @@ public class Authority {
 	 */
 	public Authority() {
 		// default constructor
-	}
-
-	/**
-	 * <p>
-	 * Getter for the field <code>id</code>.
-	 * </p>
-	 *
-	 * @return the id
-	 */
-	public Long getId() {
-		return id;
 	}
 
 	/**

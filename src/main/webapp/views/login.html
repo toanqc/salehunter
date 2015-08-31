@@ -1,9 +1,9 @@
 <div ng-controller="loginCtrl">
 	<div class="breadcrumb">
 		<a ui-sref="/">{{"login.breadcrumb.home" | translate}}</a> &raquo; <a
-			ui-sref="accounts-home">{{"login.breadcrumb.account" | translate}}</a>
-		&raquo; <a ui-sref="accounts-login">{{"login.breadcrumb.login" |
-			translate}}</a>
+			ui-sref="accounts-home">{{"login.breadcrumb.account" |
+			translate}}</a> &raquo; <a ui-sref="accounts-login">{{"login.breadcrumb.login"
+			| translate}}</a>
 	</div>
 	<h1>{{"login.accountlogin" | translate}}</h1>
 	<div class="login-content">
@@ -22,13 +22,13 @@
 			<div class="content">
 				<p>{{"login.returningdescription" | translate}}</p>
 				<b>{{"login.email" | translate}}:</b><br />
-				<form ng-submit="submit(data)" method="post">
+				<form ng-submit="submit(user)">
 					<input type="text" name="email" placeholder="Email"
-						ng-model="data.email" /> <br /> <br /> <b>{{"login.password" |
-						translate}}:</b><br /> <input type="password" name="password"
-						placeholder="Password" ng-model="data.password" /> <br /> <a href="#">{{"login.forgottenpassword"
-						| translate}}</a><br /> <br /> <input type="submit" value="Login"
-						class="button"u/>
+						ng-model="user.email" /> <br /> <br /> <b>{{"user.password"
+						| translate}}:</b><br /> <input type="password" name="password"
+						placeholder="Password" ng-model="user.password" /> <br /> <a
+						href="#">{{"login.forgottenpassword" | translate}}</a><br /> <br />
+					<input type="submit" value="Login" class="button" />
 				</form>
 			</div>
 		</div>

@@ -40,6 +40,7 @@ public class User extends Model {
 	private String password;
 
 	@NotBlank
+	@Size(min = 8, max = 128)
 	@Transient
 	private String confirmPassword;
 

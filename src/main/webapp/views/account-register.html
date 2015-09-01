@@ -1,3 +1,107 @@
-<h2>Add New Order</h2>
- 
-{{ message }}
+<div ng-controller="accountCtrl">
+	<div class="sublink">
+		<a ui-sref="/">{{"breadcrumb.home" | translate}}</a> &raquo; <a
+			ui-sref="accounts-home">{{"breadcrumb.account" | translate}}</a>
+		&raquo; <a ui-sref="accounts-register">{{"breadcrumb.register" |
+			translate}}</a>
+	</div>
+	<h1>{{"account.register.title" | translate}}</h1>
+	<p>
+		{{"account.register.hadaccount" | translate}} <a
+			ui-sref="accounts-login">{{"account.register.loginpage" |
+			translate}}</a>.
+	</p>
+	<form ng-submit="registerAccount(account)">
+		<h2>{{"account.register.yourpersonaldetails" | translate}}</h2>
+		<div class="content">
+			<table class="form">
+				<tr>
+					<td><span class="required">* </span><label for="firstName">{{"account.register.firstname"
+							| translate}}:</label></td>
+					<td><input ng-model="account.firstName" type="text"
+						id="firstName" name="firstName" value="" size="32" maxlength="32" /></td>
+				</tr>
+				<tr>
+					<td><span class="required">* </span><label for="lastName">{{"account.register.lastname"
+							| translate}}:</label></td>
+					<td><input ng-model="account.lastName" type="text"
+						id="lastName" name="lastName" value="" size="32" maxlength="32" /></td>
+				</tr>
+				<tr>
+					<td><span class="required">* </span><label for="gender">{{"account.register.gender"
+							| translate}}:</label></td>
+					<td><input type="radio" id="gender" value="M"
+						checked="checked">{{"account.register.male" | translate}}<input
+						type="radio" id="gender" value="F">{{"account.register.female"
+						| translate}}</td>
+				</tr>
+				<tr>
+					<td><span class="required">* </span><label for="email">{{"account.register.email"
+							| translate}}:</label></td>
+					<td><input ng-model="account.email" type="text" name="email"
+						id="email" size="32" maxlength="32" /> <input type="hidden"
+						ng-model="account.user.email" name="email" /></td>
+				</tr>
+				<tr>
+					<td><span class="required">* </span> <label for="telephone">{{"account.register.telephone"
+							| translate}}:</label></td>
+					<td><input ng-model="account.telephone" type="text"
+						id="telephone" name="telephone" size="32" maxlength="12" /></td>
+				</tr>
+			</table>
+		</div>
+		<h2>{{"account.register.youraddress" | translate}}</h2>
+		<div class="content">
+			<table class="form">
+				<tr>
+					<td><span class="required">* </span><label for="street1">{{"account.register.address1"
+							| translate}}:</label></td>
+					<td><input ng-model="account.address.street1" type="text"
+						id="street1" name="street1" size="50" maxlength="128" /></td>
+				</tr>
+				<tr>
+					<td><label for="street2">{{"account.register.address2"
+							| translate}}:</label></td>
+					<td><input ng-model="account.address.street2" type="text"
+						id="street2" name="street2" size="50" maxlength="128" /></td>
+				</tr>
+				<tr>
+					<td><label for="city">City:</label></td>
+					<td><input ng-model="account.address.city" type="text"
+						name="city" id="city" size="32" maxlength="128" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><country-state-select></country-state-select></td>
+				</tr>
+			</table>
+		</div>
+		<h2>{{"account.register.yourpassword" | translate}}</h2>
+		<div class="content">
+			<table class="form">
+				<tr>
+					<td><span class="required">* </span><label for="password">{{"account.register.password"
+							| translate}}:</label></td>
+					<td><input ng-model="account.user.password" type="password"
+						id="password" name="password" size="32" maxlength="128" /></td>
+				</tr>
+				<tr>
+					<td><span class="required">* </span><label
+						for="confirmPassword">{{"account.register.passwordconfirm"
+							| translate}} :</label></td>
+					<td><input ng-model="account.user.confirmPassword"
+						type="password" id="confirmPassword" name="confirmPassword"
+						size="32" maxlength="128" /></td>
+				</tr>
+			</table>
+		</div>
+		<div class="content">
+			<div class="buttons">
+				<div class="right">
+					I have read and agree to the <a class="colorbox"><b>Privacy
+							Policy</b></a> <input type="checkbox" name="agree" value="1" /> <input
+						type="submit" value='{{"button.continue" | translate}}' class="button" />
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

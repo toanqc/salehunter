@@ -1,10 +1,5 @@
 {
 	"login": {
-		"breadcrumb": {
-			"home": "Home",
-			"account": "Account",
-			"login": "Login"
-		},
 		"accountlogin": "Account Login",
 		"newcustomer": "New Customer",
 		"registeraccount": "Register Account",

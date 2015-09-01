@@ -1,8 +1,8 @@
 <div ng-controller="loginCtrl">
-	<div class="breadcrumb">
-		<a ui-sref="/">{{"login.breadcrumb.home" | translate}}</a> &raquo; <a
-			ui-sref="accounts-home">{{"login.breadcrumb.account" |
-			translate}}</a> &raquo; <a ui-sref="accounts-login">{{"login.breadcrumb.login"
+	<div class="sublink">
+		<a ui-sref="/">{{"breadcrumb.home" | translate}}</a> &raquo; <a
+			ui-sref="accounts-home">{{"breadcrumb.account" |
+			translate}}</a> &raquo; <a ui-sref="accounts-login">{{"breadcrumb.login"
 			| translate}}</a>
 	</div>
 	<h1>{{"login.accountlogin" | translate}}</h1>
@@ -14,7 +14,7 @@
 					<b>{{"login.registeraccount" | translate}}</b>
 				</p>
 				<p>{{"login.registerdescription" | translate}}</p>
-				<a href="#/accounts/register" class="button">Continue</a>
+				<a ui-sref="accounts-register" class="button">{{"button.continue" | translate}}</a>
 			</div>
 		</div>
 		<div class="right">
@@ -28,7 +28,7 @@
 						| translate}}:</b><br /> <input type="password" name="password"
 						placeholder="Password" ng-model="user.password" /> <br /> <a
 						href="#">{{"login.forgottenpassword" | translate}}</a><br /> <br />
-					<input type="submit" value="Login" class="button" />
+					<input type="submit" value='{{"button.login" | translate}}' class="button" />
 				</form>
 			</div>
 		</div>

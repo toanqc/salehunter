@@ -1,0 +1,28 @@
+{
+	"account" : {
+		"register": {
+			"title": "Register Account",
+			"hadaccount": "If you already have an account with us, please login at the",
+			"loginpage": "login page",
+			"yourpersonaldetails": "Your Personal Details",
+			"firstname": "First Name",
+			"lastname": "Last Name",
+			"gender": "Gender",
+			"male": "Male",
+			"female": "Female",
+			"email": "E-Mail",
+			"telephone": "Telephone",
+			"youraddress": "Your Address",
+			"address1": "Address 1",
+			"address2": "Address 2",
+			"city": "City",
+			"country": "Country",
+			"state": "Region / State",
+			"yourpassword": "Your Password",
+			"password": "Password",
+			"passwordconfirm": "Password Confirm",
+			"ihaveread": "I have read and agree to the",
+			"privacypolicy": "Privacy Policy"
+		}
+	}
+}

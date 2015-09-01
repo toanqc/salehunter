@@ -12,6 +12,7 @@ app.config(function($translateProvider, $translatePartialLoaderProvider) {
 	$translateProvider.preferredLanguage('en');
 	$translateProvider.useSanitizeValueStrategy(null);
 	$translateProvider.useLocalStorage();
+	$translatePartialLoaderProvider.addPart('global');
 	$translatePartialLoaderProvider.addPart('header-footer');
 
 });

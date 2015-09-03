@@ -1,7 +1,7 @@
 'use strict';
 
 var app = angular.module('salehunter', [ 'http-auth-interceptor', 'ui.router',
-		'ngCookies', 'pascalprecht.translate' ]);
+		'ngCookies', 'pascalprecht.translate', 'ngMessages' ]);
 
 app.config(function($translateProvider, $translatePartialLoaderProvider) {
 

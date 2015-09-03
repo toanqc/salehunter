@@ -45,12 +45,16 @@ p {
 	margin-bottom: 20px;
 }
 
-input[type='text'], input[type='password'], textarea {
+input[type='text'], input[type='password'], input[type='email'], textarea {
 	background: #F8F8F8;
 	border: 1px solid #EAE5E4;
 	padding: 3px;
 	margin-left: 0px;
 	margin-right: 0px;
+}
+
+table.form select {
+	width: 254px;
 }
 
 form {
@@ -880,6 +884,12 @@ table.form>*>*>td {
 
 table.form td {
 	padding: 4px 4px 4px 0px;
+}
+
+table.form .error {
+	color: #a94442;
+	font-weight: bold;
+	padding-left: 10px;
 }
 
 .required {

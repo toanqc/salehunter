@@ -1,0 +1,7 @@
+{
+	"validation": {
+		"required": "{{fieldName}} is required!",
+		"length": "{{fieldName}} must be between {{minlength}} and {{maxlength}} characters!",
+		"format": "{{fieldName}} is invalid format!"
+	}
+}

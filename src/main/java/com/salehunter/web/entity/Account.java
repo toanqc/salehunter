@@ -52,7 +52,7 @@ public class Account extends Model {
 
 	@NotBlank
 	@Size(max = 12)
-	@Column(name = "PHONE", nullable = false, length = 12)
+	@Column(name = "PHONE", nullable = false, length = 14)
 	private String phone;
 
 	@NotBlank

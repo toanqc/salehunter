@@ -53,13 +53,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
 	});
 });
 
-app.run(function($window, $rootScope, $state) {
+app.run(function($cookies, $rootScope, $state) {
 
 	$rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
 		var isAuthenticationRequired = toState.access
 				&& toState.access.requiredLogin;
 
-		var currentUser = $window.sessionStorage.currentUser;
+		var currentUser = $cookies.get('currentUser');
 		if (currentUser) {
 			$rootScope.currentUser = currentUser;
 		}

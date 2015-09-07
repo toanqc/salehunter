@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('loginCtrl', function($translate, $translatePartialLoader,
-		$scope, $http, $state, $authService, $window, $rootScope) {
+		$scope, $http, $state, $authService, $cookies, $rootScope) {
 	$translatePartialLoader.addPart('login');
 	$translate.refresh();
 
@@ -13,7 +13,7 @@ app.controller('loginCtrl', function($translate, $translatePartialLoader,
 		}).success(function(account) {
 			if (account) {
 				$authService.loginConfirmed();
-				$window.sessionStorage.currentUser = account.firstName;
+				$cookies.put('currentUser', account.firstName);
 				$state.go('accounts-home');
 			} else {
 				// login failed
@@ -25,7 +25,7 @@ app.controller('loginCtrl', function($translate, $translatePartialLoader,
 	}
 
 	$scope.logout = function() {
-		$window.sessionStorage.currentUser = "";
+		$cookies.remove('currentUser');
 		$rootScope.currentUser = "";
 		$state.go("/");
 	}

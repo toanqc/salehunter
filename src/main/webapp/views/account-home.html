@@ -1,1 +1,28 @@
-Account-Home Page
+<div ng-controller="accountCtrl">
+	<div class="sublink">
+		<a ui-sref="/">{{"breadcrumb.home" | translate}}</a> &raquo; <a
+			ui-sref="accounts-home">{{"breadcrumb.account" | translate}}</a>
+	</div>
+	<h1>{{"account.home.title" | translate}}</h1>
+	<h2>{{"account.home.title" | translate}}</h2>
+	<div class="content">
+		<ul>
+			<li><a href="">{{"account.home.editaccountinfo" |
+					translate}}</a></li>
+			<li><a href="">{{"account.home.changepassword" | translate}}</a></li>
+			<li><a href="">{{"account.home.addressbookentries" |
+					translate}}</a></li>
+			<li><a href="">{{"account.home.wishlist" | translate}}</a></li>
+		</ul>
+	</div>
+	<h2>{{"account.home.myorders" | translate}}</h2>
+	<div class="content">
+		<ul>
+			<li><a href="">{{"account.home.orderhistory" | translate}}</a></li>
+			<li><a href="">{{"account.home.downloads" | translate}}</a></li>
+			<li><a href="">{{"account.home.rewardpoints" | translate}}</a></li>
+			<li><a href="">{{"account.home.returnrequests" | translate}}</a></li>
+			<li><a href="">{{"account.home.transactions" | translate}}</a></li>
+		</ul>
+	</div>
+</div>

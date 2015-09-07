@@ -32,6 +32,19 @@
 			"question": "If you have ANY questions about the operation of this online shop, please email the store owner.",
 			"emailsent": "A confirmation has been sent to the provided email address. If you have not received it within the hour, please",
 			"contactus": "contact us"
+		},
+		"home": {
+			"title": "My Account",
+			"editaccountinfo": "Edit your account information",
+			"changepassword": "Change your password",
+			"addressbookentries": "Modify your address book entries",
+			"wishlist": "Modify your wish list",
+			"myorders": "My Orders",
+			"orderhistory": "View your order history",
+			"downloads": "Downloads",
+			"rewardpoints": "Your Reward Points",
+			"returnrequests": "View your return requests",
+			"transactions": "Your Transactions"
 		}
 	}
 }

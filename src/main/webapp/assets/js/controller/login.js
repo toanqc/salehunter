@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('loginCtrl', function($translate, $translatePartialLoader,
-		$scope, $http, $state, $authService, $window) {
+		$scope, $http, $state, $authService, $window, $rootScope) {
 	$translatePartialLoader.addPart('login');
 	$translate.refresh();
 
@@ -22,5 +22,11 @@ app.controller('loginCtrl', function($translate, $translatePartialLoader,
 		}).error(function(data, status, headers, config) {
 			console.log("Calling failed to RESTful API.");
 		});
+	}
+
+	$scope.logout = function() {
+		$window.sessionStorage.currentUser = "";
+		$rootScope.currentUser = "";
+		$state.go("/");
 	}
 });

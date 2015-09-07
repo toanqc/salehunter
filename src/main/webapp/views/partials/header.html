@@ -1,4 +1,4 @@
-<div id="header" ng-controller="appCtrl">
+<div id="header" ng-controller="loginCtrl">
 	<div id="logo">
 		<a href=""><img
 			src="http://www.beauty-oc.any-themes.com/beautyshop1/image/data/logo.png"
@@ -31,8 +31,9 @@
 			ui-sref="accounts-register">{{"header.create" | translate}}</a>.
 	</div>
 	<div id="welcome" ng-show="currentUser">
-		{{"header.loggedin" | translate}} <a ui-sref="accounts-home">{{currentUser}}</a> <b>(</b> <a
-			href="">{{"header.logout" | translate}}</a> <b>)</b>
+		{{"header.loggedin" | translate}} <a ui-sref="accounts-home">{{currentUser}}</a>
+		<b>(</b> <a href ng-click="logout()">{{"header.logout" |
+			translate}}</a> <b>)</b>
 	</div>
 	<div id="language">
 		<img src="assets/img/flag/us.png" alt="English" title="English"

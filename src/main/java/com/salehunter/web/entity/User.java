@@ -47,7 +47,7 @@ public class User extends Model {
 	@Valid
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "EMAIL", referencedColumnName = "EMAIL")
-	private List<Authority> authorities;
+	private List<Authority> authorities = new ArrayList<Authority>();
 
 	/**
 	 * <p>
@@ -55,8 +55,7 @@ public class User extends Model {
 	 * </p>
 	 */
 	public User() {
-		this.active = true;
-		this.authorities = new ArrayList<Authority>();
+		// default constructor
 	}
 
 	/**

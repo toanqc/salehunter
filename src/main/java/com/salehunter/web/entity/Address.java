@@ -37,11 +37,13 @@ public class Address extends Model implements Serializable {
 	private String zip;
 
 	@NotBlank
-	@Size(max = 32)
-	@Column(name = "COUNTRY", nullable = false, length = 32)
+	@Size(max = 128)
+	@Column(name = "COUNTRY", nullable = false, length = 128)
 	private String country;
 
-	@Column(name = "STATE", length = 2)
+	@NotBlank
+	@Size(max = 32)
+	@Column(name = "STATE", length = 32)
 	private String state;
 
 	/**

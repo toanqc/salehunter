@@ -28,5 +28,12 @@ public interface AccountResource {
 	 * @param password
 	 * @return
 	 */
-	Account isLogin(User user);
+	Account login(User user);
+
+	/**
+	 * 
+	 * @param account
+	 * @return
+	 */
+	Account createAccount(Account account);
 }

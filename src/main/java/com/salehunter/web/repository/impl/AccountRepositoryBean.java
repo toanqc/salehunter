@@ -18,8 +18,8 @@ import org.apache.commons.codec.digest.DigestUtils;
 
 import com.salehunter.web.entity.Account;
 import com.salehunter.web.entity.User;
-import com.salehunter.web.repository.AccountRepository;
 import com.salehunter.web.repository.AbstractRepositoryBean;
+import com.salehunter.web.repository.AccountRepository;
 
 /**
  * @author qct
@@ -59,5 +59,24 @@ public class AccountRepositoryBean extends AbstractRepositoryBean<Account>implem
 		List<Account> accountList = query.getResultList();
 
 		return this.getFirstElement(accountList);
+	}
+
+	@Override
+	public Account createAccount(Account account) {
+		return this.create(account);
+	}
+
+	@Override
+	public String getLatestAccountId() {
+		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+		CriteriaQuery<Account> criteriaQuery = criteriaBuilder.createQuery(Account.class);
+		Root<Account> accountRoot = criteriaQuery.from(Account.class);
+		criteriaQuery.select(accountRoot);
+		criteriaQuery.orderBy(criteriaBuilder.asc(accountRoot.get("id")));
+
+		TypedQuery<Account> query = entityManager.createQuery(criteriaQuery);
+		List<Account> accountList = query.getResultList();
+
+		return this.getFirstElement(accountList).getAccountId();
 	}
 }

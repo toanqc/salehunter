@@ -11,7 +11,8 @@
 			ui-sref="accounts-login">{{"account.register.loginpage" |
 			translate}}</a>.
 	</p>
-	<form name="accountForm" novalidate>
+	<form name="accountForm" novalidate
+		ng-submit="registerAccount(account)">
 		<h2>{{"account.register.yourpersonaldetails" | translate}}</h2>
 		<div class="content">
 			<table class="form">
@@ -50,9 +51,10 @@
 					<td><span class="required">* </span><label for="gender">{{"account.register.gender"
 							| translate}}:</label></td>
 					<td><input type="radio" id="gender" value="M"
-						checked="checked">{{"account.register.male" | translate}}<input
-						type="radio" id="gender" value="F">{{"account.register.female"
-						| translate}}</td>
+						ng-model="account.gender" checked="checked">{{"account.register.male"
+						| translate}}<input type="radio" id="gender" value="F"
+						ng-model="account.gender">{{"account.register.female" |
+						translate}}</td>
 				</tr>
 				<tr>
 					<td><span class="required">* </span><label for="email">{{"account.register.email"
@@ -67,23 +69,23 @@
 								translate:'{fieldName: "E-Mail", minlength: "3", maxlength:
 								"32"}'}}</span> <span ng-message="email">{{"validation.format" |
 								translate:'{fieldName: "E-Mail"}'}}</span>
-					</span><input type="hidden" ng-model="account.user.email" /></td>
+					</span></td>
 				</tr>
 				<tr>
-					<td><span class="required">* </span> <label for="telephone">{{"account.register.telephone"
+					<td><span class="required">* </span> <label for="phone">{{"account.register.phone"
 							| translate}}:</label></td>
-					<td><input ng-model="account.telephone" type="text"
-						id="telephone" name="telephone" size="40" required minlength="10"
-						maxlength="14"
+					<td><input ng-model="account.phone" type="text" id="phone"
+						name="phone" size="40" required minlength="10" maxlength="14"
 						ng-pattern="/^(\(?([0-9]{3})\)?)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/" />
-						<span class="error" ng-if="accountForm.telephone.$touched || submitted"
-						ng-messages="accountForm.telephone.$error"> <span
+						<span class="error"
+						ng-if="accountForm.phone.$touched || submitted"
+						ng-messages="accountForm.phone.$error"> <span
 							ng-message="required">{{"validation.required" |
-								translate:'{fieldName: "Telephone"}'}}</span> <span
+								translate:'{fieldName: "Phone"}'}}</span> <span
 							ng-message="minlength, maxlength">{{"validation.length" |
-								translate:'{fieldName: "Telephone", minlength: "10", maxlength:
+								translate:'{fieldName: "Phone", minlength: "10", maxlength:
 								"14"}'}}</span> <span ng-message="pattern">{{"validation.format"
-								| translate:'{fieldName: "Telephone"}'}}</span>
+								| translate:'{fieldName: "Phone"}'}}</span>
 					</span></td>
 				</tr>
 			</table>
@@ -113,12 +115,27 @@
 						id="street2" name="street2" size="40" maxlength="128" /></td>
 				</tr>
 				<tr>
-					<td><label for="city">City:</label></td>
+					<td><label for="city">{{"account.register.city" |
+							translate}}:</label></td>
 					<td><input ng-model="account.address.city" type="text"
 						name="city" id="city" size="40" maxlength="128" /></td>
 				</tr>
 				<tr>
 					<td colspan="2"><country-state-select></country-state-select></td>
+				</tr>
+				<tr>
+					<td><span class="required">* </span><label for="zip">{{"account.register.zip" |
+							translate}}:</label></td>
+					<td><input ng-model="account.address.zip" type="text"
+						name="zip" id="zip" size="40" required minlength="5" maxlength="10" /><span
+						class="error" ng-if="accountForm.zip.$touched || submitted"
+						ng-messages="accountForm.zip.$error"> <span
+							ng-message="required">{{"validation.required" |
+								translate:'{fieldName: "Zip"}'}}</span> <span
+							ng-message="minlength, maxlength">{{"validation.length" |
+								translate:'{fieldName: "Zip", minlength: "5", maxlength:
+								"10"}'}}</span>
+					</span></td>
 				</tr>
 			</table>
 		</div>
@@ -147,7 +164,8 @@
 					<td><input ng-model="account.user.confirmPassword"
 						type="password" id="confirmPassword" name="confirmPassword"
 						size="40" required minlength="8" maxlength="128" /><span
-						class="error" ng-if="accountForm.confirmPassword.$touched || submitted"
+						class="error"
+						ng-if="accountForm.confirmPassword.$touched || submitted"
 						ng-messages="accountForm.confirmPassword.$error"> <span
 							ng-message="required">{{"validation.required" |
 								translate:'{fieldName: "Confirm Password"}'}}</span> <span
@@ -161,8 +179,8 @@
 		<div class="content">
 			<div class="buttons">
 				<div class="right">
-					I have read and agree to the <a class="colorbox"><b>Privacy
-							Policy</b></a> <input type="checkbox" name="agree" value="1" /> <input
+					{{"account.register.ihaveread" | translate}} <a class="colorbox"><b>{{"account.register.privacypolicy"
+							| translate}}</b></a> <input type="checkbox" name="agree" value="1" /> <input
 						type="submit" value='{{"button.continue" | translate}}'
 						class="button" ng-click="submitted=true" />
 				</div>

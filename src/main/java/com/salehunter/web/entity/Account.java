@@ -71,6 +71,15 @@ public class Account extends Model {
 	private User user;
 
 	/**
+	 * <p>
+	 * Constructor for Account.
+	 * </p>
+	 */
+	public Account() {
+		// default constructor
+	}
+
+	/**
 	 * @return the accountId
 	 */
 	public String getAccountId() {

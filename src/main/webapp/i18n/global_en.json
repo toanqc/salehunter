@@ -3,7 +3,8 @@
 		"home": "Home",
 		"account": "Account",
 		"login": "Login",
-		"register": "Register"
+		"register": "Register",
+		"success": "Success"
 	},
 	"button": {
 		"login": "Login",

@@ -44,6 +44,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
 		access : {
 			requiredLogin : true
 		}
+	}).state('accounts-success', {
+		url : '/accounts/success',
+		templateUrl : 'views/account-success.html'
 	}).state('404', {
 		url : '/404',
 		templateUrl : 'views/errors/404.html'

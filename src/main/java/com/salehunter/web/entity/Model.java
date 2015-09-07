@@ -13,7 +13,6 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 
@@ -29,9 +28,8 @@ public abstract class Model implements Serializable {
 	@Column(name = "ID", unique = true, nullable = false)
 	protected long id;
 
-	@Size(max = 1)
 	@Column(name = "ACTIVE", nullable = false, length = 1)
-	protected boolean active;
+	protected boolean active = true;
 
 	@NotNull
 	@Column(name = "CREATED_DATE", nullable = false)

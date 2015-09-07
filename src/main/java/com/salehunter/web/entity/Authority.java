@@ -45,6 +45,16 @@ public class Authority extends Model {
 	}
 
 	/**
+	 * 
+	 * @param email
+	 * @param authorityRole
+	 */
+	public Authority(String email, AuthorityRole authorityRole) {
+		this.email = email;
+		this.authorityRole = authorityRole;
+	}
+
+	/**
 	 * <p>
 	 * Setter for the field <code>id</code>.
 	 * </p>

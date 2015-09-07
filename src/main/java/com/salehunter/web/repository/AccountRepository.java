@@ -27,4 +27,17 @@ public interface AccountRepository {
 	 * @return
 	 */
 	Account loginAccount(User user);
+
+	/**
+	 * 
+	 * @param account
+	 * @return
+	 */
+	Account createAccount(Account account);
+
+	/**
+	 * 
+	 * @return
+	 */
+	String getLatestAccountId();
 }
